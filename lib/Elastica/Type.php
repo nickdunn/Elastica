@@ -196,6 +196,17 @@ class Elastica_Type implements Elastica_Searchable {
 	public function getIndex() {
 		return $this->_index;
 	}
+	
+	/**
+	 * Deletes the type
+	 *
+	 * @return Elastica_Response Response object
+	 */
+	public function delete() {
+		$response = $this->request('', Elastica_Request::DELETE);
+
+		return $response;
+	}
 
 	/**
 	 * Deletes an entry by its unique identifier
